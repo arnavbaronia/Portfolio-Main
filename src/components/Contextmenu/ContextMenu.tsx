@@ -59,7 +59,7 @@ export default function ContextMenu() {
     >
       <a
         target="_blank"
-        href="https://github.com/arnavbaronia"
+        href="https://github.com/arnavbaronia/Portfolio-Main"
         onMouseDown={playAudio}
         onMouseUp={playAudio}
       >
