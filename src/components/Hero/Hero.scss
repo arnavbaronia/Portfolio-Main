@@ -1,147 +1,134 @@
 .container-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 0; /* Remove extra padding */
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff; /* Ensure a background color for contrast */
+
+  .img-container {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    padding-top: 14.25em;
-    box-sizing: border-box;
+    justify-content: center;
+    height: 450px; /* Set the height for the container */
+    width: 450px; /* Set the width for the container */
+    overflow: hidden; /* Hide overflow to keep image inside container */
     position: relative;
-  
-    #hero {
-      top: 0;
-      position: absolute;
-    }
-  
-    .container-avatar {
-      border-radius: 9999px;
-      height: 250px;
-      width: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
-  
-      @media screen and (max-width: 510px) {
-        height: 200px;
-        width: 200px;
-  
-        img {
-          height: 200px !important;
-          width: 200px !important;
-        }
-      }
-  
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover; /* Ensure image covers the container */
-        object-position: center; /* Center the image */
-        position: absolute;
-        top: -15%; /* Push the image up by 15% of its own height */
-      }
-    }
-  
-    h2,
-    h3,
-    h4,
-    h1 {
-      font-family: "Inter", sans-serif;
-    }
-  
-    h2 {
-      margin-top: 24px;
-      font-size: 24px;
-      font-weight: 500;
-      letter-spacing: -0.035em;
-  
-      @media screen and (max-width: 410px) {
-        font-size: 18px;
-      }
-    }
-  
-    h1 {
-      margin-top: 25px;
-      font-size: 72px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      word-spacing: -0.0075em;
-  
-      @media screen and (max-width: 768px) {
-        font-size: 50px;
-      }
-  
-      @media screen and (max-width: 510px) {
-        font-size: 38px;
-      }
-  
-      @media screen and (max-width: 410px) {
-        font-size: 32px;
-      }
-  
-      @media screen and (max-width: 350px) {
-        font-size: 27px;
-      }
-    }
-  
-    h4 {
-      font-size: 15px;
-      font-weight: 400;
-      margin-top: 22px;
-      max-width: 390px;
-      text-align: center;
-  
-      @media screen and (max-width: 410px) {
-        font-size: 12px;
-        max-width: 270px;
-      }
-  
-      @media screen and (max-width: 350px) {
-        margin-top: 14px;
-      }
-    }
-  
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 12px 20px 12px 24px;
-      background-color: #0064ff;
-      border: none;
-      width: 190px;
-      margin-top: 24px;
-      border-radius: 36px;
-      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.275);
-      position: relative;
-  
-      @media screen and (max-width: 510px) {
-        width: 165px;
-      }
-  
-      &:hover {
-        img {
-          right: 16px;
-        }
-      }
-  
-      h3 {
-        color: white;
-        font-size: 18px;
-        font-weight: 400;
-  
-        @media screen and (max-width: 510px) {
-          font-size: 14px;
-        }
-      }
-  
-      img {
-        height: 12px;
-        transition: 0.275s all ease-out;
-        position: absolute;
-        right: 20px;
-      }
+    margin-bottom: 20px; /* Add spacing below the image */
+    border-radius: 50%; /* Adjust to have a circular crop effect */
+  }
+
+  .img-avatar {
+    height: 120%; /* Make the image larger to ensure cropping */
+    width: auto; /* Maintain aspect ratio of the image */
+    object-fit: cover; /* Ensure the image covers the container */
+    object-position: center; /* Center the image */
+    position: absolute; /* Ensure the image is positioned inside the container */
+    top: -10%; /* Crop 10% from the top */
+  }
+
+  h2,
+  h3,
+  h4,
+  h1 {
+    font-family: "Inter", sans-serif;
+    margin: 0; /* Remove default margins */
+  }
+
+  h2 {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+
+    @media screen and (max-width: 410px) {
+      font-size: 18px;
     }
   }
-  
+
+  h1 {
+    margin-top: 25px;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    word-spacing: -0.0075em;
+
+    @media screen and (max-width: 768px) {
+      font-size: 50px;
+    }
+
+    @media screen and (max-width: 510px) {
+      font-size: 38px;
+    }
+
+    @media screen and (max-width: 410px) {
+      font-size: 32px;
+    }
+
+    @media screen and (max-width: 350px) {
+      font-size: 27px;
+    }
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 22px;
+    max-width: 390px;
+    text-align: center;
+
+    @media screen and (max-width: 410px) {
+      font-size: 12px;
+      max-width: 270px;
+    }
+
+    @media screen and (max-width: 350px) {
+      margin-top: 14px;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 20px 12px 24px;
+    background-color: #0064ff;
+    border: none;
+    width: 190px;
+    margin-top: 24px;
+    border-radius: 36px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.275);
+    position: relative;
+
+    @media screen and (max-width: 510px) {
+      width: 165px;
+    }
+
+    &:hover {
+      img {
+        right: 16px;
+      }
+    }
+
+    h3 {
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+
+      @media screen and (max-width: 510px) {
+        font-size: 14px;
+      }
+    }
+
+    img {
+      height: 12px;
+      transition: 0.275s all ease-out;
+      position: absolute;
+      right: 20px;
+    }
+  }
+}

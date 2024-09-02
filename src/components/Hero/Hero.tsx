@@ -11,8 +11,9 @@ export default function Hero() {
   return (
     <div className={`container-hero ${state.darkmode ? "dark-bg-1" : "light-bg-1"}`}>
       <div className="anchor" id="hero" />
+
       <motion.div
-        className="container-avatar"
+        className="img-container"
         initial={{ opacity: 0, y: 350 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", duration: 0.6 }}
