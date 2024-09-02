@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
   publish = "Portfolio-Main/build"
-  base = "Portfolio-Main"
 
 [context.production]
   environment = { NODE_ENV = "production" }
