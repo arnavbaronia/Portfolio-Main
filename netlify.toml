@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "Portfolio-Main/build"
+  command = "CI= npm run build"
+  publish = "build"
 
 [context.production]
   environment = { NODE_ENV = "production" }
