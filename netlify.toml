@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+  # Set your base directory if your project files are not in the root directory
+
+# Optional: Add context-specific settings
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "build"
+
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "build"
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+
