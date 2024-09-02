@@ -6,24 +6,20 @@ import scroll from "../../utils/Helpers/scroll";
 import playAudio from "../../utils/Helpers/playAudio";
 
 export default function Hero() {
-  const [state, dispatch] = useContext(store);
+  const [state] = useContext(store);
 
   return (
     <div className={`container-hero ${state.darkmode ? "dark-bg-1" : "light-bg-1"}`}>
       <div className="anchor" id="hero" />
 
-      <motion.div
-        className="img-container"
+      <motion.img
+        className="img-avatar"
+        src={require("../../assets/images/arnav.jpeg")}
+        alt="Profile Avatar"
         initial={{ opacity: 0, y: 350 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", duration: 0.6 }}
-      >
-        <img
-          className="img-avatar"
-          src={require("../../assets/images/arnav.jpeg")}
-          alt="Profile Avatar"
-        />
-      </motion.div>
+      />
 
       <motion.h2
         className={`${state.darkmode ? "white-opacity" : "light-eyebrow"}`}
