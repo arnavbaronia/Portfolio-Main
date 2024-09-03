@@ -4,4 +4,5 @@ interface storeType {
       sounds: boolean;
   }
   
+  
   export default storeType;

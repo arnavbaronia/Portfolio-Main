@@ -1,37 +1,43 @@
+import storeType from "../types/store"; // Adjust the import path as necessary
 import sampleStore from "../utils/Sample/sampleStore";
 
-const reducer = (state = sampleStore, action: any) => {
+interface Action {
+  type: string;
+  payload?: any;
+}
+
+const reducer = (state: storeType = sampleStore, action: Action): storeType => {
   switch (action.type) {
     case "language/SET":
-      let returnedState: any;
-      state.language === "english"
-        ? (returnedState = { ...state, language: "german" })
-        : (returnedState = { ...state, language: "english" });
-      return returnedState;
+      return {
+        ...state,
+        language: state.language === "english" ? "german" : "english",
+      };
+
     case "language/INIT":
-      const loadedLang = {
+      return {
         ...state,
         language: action.payload,
       };
-      return loadedLang;
+
     case "darkmode/TOGGLE":
-      const toggledDarkmode = {
+      return {
         ...state,
         darkmode: !state.darkmode,
       };
-      return toggledDarkmode;
+
     case "darkmode/INIT":
-      const loadedDarkmode = {
+      return {
         ...state,
         darkmode: action.payload,
       };
-      return loadedDarkmode;
+
     case "sounds/TOGGLE":
-      const toggledSounds = {
+      return {
         ...state,
         sounds: !state.sounds,
       };
-      return toggledSounds;
+
     default:
       return state;
   }

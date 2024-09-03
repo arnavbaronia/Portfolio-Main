@@ -2,7 +2,6 @@ import React, { useReducer, createContext } from "react";
 import "./App.scss";
 import NavBar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import LanguageSwitch from "./components/Languageswitch/LanguageSwitch";
 import setCursorLocation from "./utils/Helpers/setCursorLocation";
 import Cursor from "./components/Cursor/Cursor";
 import setCursorAppearance from "./utils/Helpers/setCursorAppearance";
@@ -49,13 +48,12 @@ function App() {
         <Cursor />
         <NavBar />
         <ThemeButton />
-        {/* <LanguageSwitch /> */}
         <ContextMenu />
         <Hero />
         <Manifest />
         <AboutMe />
         <Projects />
-        <Experience /> {/* Added Experience section */}
+        <Experience />
         <Skills />
         <Resume />
         <Contact />
