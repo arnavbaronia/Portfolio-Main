@@ -32,7 +32,7 @@ export default function ContextMenu() {
   };
 
   const copyURL = () => {
-    navigator.clipboard.writeText("https://twitter.com/arnavb_0");
+    navigator.clipboard.writeText("https://arnavbaronia.netlify.app/");
     toast(state.language === "english" ? "Copied URL" : "Copied URL!", {
       icon: "🌐",
       position: "top-left",

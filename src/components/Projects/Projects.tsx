@@ -102,7 +102,7 @@ export default function Projects() {
       <a
         href="https://github.com/arnavbaronia"
         target="_blank"
-        className="more"
+        className="more-button"
         onMouseDown={playAudio}
         onMouseUp={playAudio}
       >
