@@ -1,19 +1,85 @@
 .projects-container {
+  padding: 40px; /* Increase padding */
+  border-radius: 28px;
+  width: 100%;
+  text-align: left; /* Align text to left */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 28px;
-  border-radius: 28px;
-  width: 100%;
-  text-align: left;
 
-  h1 {
-    margin-left: -50px;
+  &.light-card {
+    background-color: #f5f5f7; /* Light gray background */
+    color: #000;
   }
 
-  h3 {
-    margin-left: -688px;
+  &.dark-card {
+    background-color: black; /* Dark background */
+    color: #fff;
+  }
+
+  .eyebrow {
+    padding-top: 143px;
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: -0.025em;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 12px;
+    margin-left: 48.8%;
+    width: 100%;
+
+    @media screen and (max-width: 1300px) {
+      margin-left: 17.5%;
+    }
+
+    @media screen and (max-width: 1050px) {
+      margin-left: 13.5%;
+    }
+
+    @media screen and (max-width: 586px) {
+      margin-left: 9.5%;
+      font-size: 24px;
+    }
+  }
+
+  .heading {
+    font-size: 92px;
+    font-family: "Inter", sans-serif;
+    max-width: 750px;
+    letter-spacing: -0.045em;
+    line-height: 1.1;
+    margin-left: -2.1%;
+    font-weight: 600;
+    margin-bottom: 80px;
+    text-align: left;
+
+    @media screen and (max-width: 1300px) {
+      margin-left: 17.35%;
+    }
+
+    @media screen and (max-width: 1050px) {
+      margin-left: 13.35%;
+    }
+
+    @media screen and (max-width: 860px) {
+      font-size: 82px;
+      margin-bottom: 70px;
+    }
+
+    @media screen and (max-width: 770px) {
+      font-size: 72px;
+      max-width: 560px;
+      margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 586px) {
+      margin-left: 9%;
+      font-size: 50px;
+    }
+
+    @media screen and (max-width: 428px) {
+      font-size: 44px;
+      max-width: 340px;
+    }
   }
 
   .project-list {
@@ -21,10 +87,22 @@
     flex-wrap: wrap;
     gap: 46px;
     justify-content: center;
+    width: 100%;
+    margin-bottom: 24px;
   }
 
-  .project-link {
-    text-decoration: none;
+  .skill-tab-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    &.light-card {
+      background-color: white;
+    }
+
+    &.dark-card {
+      background-color: #1a1a1a;
+    }
   }
 
   .project-preview {
@@ -35,8 +113,8 @@
   }
 
   .more-button {
-    margin-top: 16px;
-    padding: 10px 20px;
+    margin-top: 32px;
+    padding: 12px 24px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
     color: #fff;
@@ -46,19 +124,11 @@
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    
+    align-self: center;
 
     &:hover {
       background-color: #0056b3;
     }
-  }
-
-  .dark-card {
-    background-color: #1a1a1a;
-    color: #fff;
-  }
-
-  .light-card {
-    background-color: #f9f9f9;
-    color: #000;
   }
 }
