@@ -12,15 +12,11 @@ export default function Resume() {
 
   return (
     <div
-      className={`resume-container ${
-        state.darkmode ? "dark-bg-1" : "light-bg-1"
-      }`}
+      className={`resume-container ${state.darkmode ? "dark-card" : "light-card"}`}
     >
       <div className="anchor" id="resume" />
       <motion.h3
-        className={`eyebrow ${
-          state.darkmode ? "dark-eyebrow" : "light-eyebrow"
-        }`}
+        className={`eyebrow ${state.darkmode ? "dark-eyebrow" : "light-eyebrow"}`}
         initial={{ y: 350 }}
         whileInView={{ y: 0 }}
         viewport={{ once: true }}
@@ -70,7 +66,7 @@ export default function Resume() {
 
           <button
             className="contact"
-            onClick={(e) => scroll("contact")}
+            onClick={() => scroll("contact")}
             onMouseDown={playAudio}
             onMouseUp={playAudio}
           >
