@@ -29,7 +29,7 @@ export default function IntroCards() {
           viewport={{ once: true }}
         >
           <div className="card-top">
-            <h2 className="num green">350</h2>
+            <h2 className="num green">300</h2>
             <h2 className="sign green-sign">+</h2>
           </div>
           <h4 className={`${state.darkmode ? "dark-eyebrow" : "light-eyebrow"}`}>
