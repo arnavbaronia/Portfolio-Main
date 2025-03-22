@@ -9,47 +9,57 @@ export default function ContactForm() {
   const form = useRef<HTMLFormElement | null>(null);
   const [state] = useContext(store);
 
-  const sendEmail = (e: FormEvent) => {
+  const sendEmail = async (e: FormEvent) => {
     e.preventDefault();
-
-    // Show success notification
-    toast.success(
-      state.language === "english" ? "Message sent!" : "Message sent!",
-      {
-        position: "top-left",
-        style: {
-          border: state.darkmode ? "2px solid hsla(0,0%,51.4%,.16)" : "1px solid #ebebeb",
-          boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.225)",
-          borderRadius: "14px",
-          fontFamily: "Inter",
-          color: state.darkmode ? "white" : "#1d1d1f",
-          fontSize: "14px",
-          backgroundColor: state.darkmode ? "#141414" : ""
-        },
-      }
-    );
-
+  
     if (form.current) {
-      emailjs
-        .sendForm(
-          "service_3wn9fwn", // Your service ID
-          "template_r6o1ld5", // Your template ID
-          form.current,
-          "e3WBukrIPyg3IFN-T" // Your public key
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.error("EmailJS error:", error.text);
+      const formData = new FormData(form.current);
+  
+      const data = {
+        from_name: formData.get("user_name") as string,
+        from_email: formData.get("user_email") as string,
+        to_name: "Arnav",
+        message: `You have received a new message from ${formData.get("user_name")} (${formData.get("user_email")}):\n\n${formData.get("message")}`,
+      };
+  
+      console.log("Sending data:", data);
+  
+      try {
+        const result = await emailjs.send(
+          "service_3wn9fwn",
+          "template_r6o1ld5", 
+          data,
+          "e3WBukrIPyg3IFN-T" 
+        );
+  
+        console.log("EmailJS result:", result.text);
+        toast.success(
+          state.language === "english" ? "Message sent!" : "Message sent!",
+          {
+            position: "top-left",
+            style: {
+              border: state.darkmode ? "2px solid hsla(0,0%,51.4%,.16)" : "1px solid #ebebeb",
+              boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.225)",
+              borderRadius: "14px",
+              fontFamily: "Inter",
+              color: state.darkmode ? "white" : "#1d1d1f",
+              fontSize: "14px",
+              backgroundColor: state.darkmode ? "#141414" : "",
+            },
           }
         );
-
-      // Clear input fields after submitting
-      form.current.reset();
+  
+        form.current.reset();
+      } catch (error) {
+        console.error("EmailJS error:", error);
+        toast.error(
+          state.language === "english"
+            ? "Failed to send message. Try again."
+            : "Failed to send message. Try again."
+        );
+      }
     }
-  };
+  };  
 
   return (
     <form
